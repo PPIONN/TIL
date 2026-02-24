@@ -1,0 +1,64 @@
+서식 지정자(Format Specifier)
+printf() 함수 혹은 scanf() 함수와 같은 입출력 함수들과 함께 쓰여서 양식에 맞게 입출력 할 수 있게끔 도와주는 지정자. 문자열의 원하는 위치에 서식 지정자를 넣어서 사용합니다.
+
+서식 지정자의 종류
+1️⃣%d: decimal의 약자. 10진수로 대체됩니다.
+
+2️⃣%o: octal의 약자. 8진수로 대체됩니다. ex) 9(10) <-> 11(8)
+
+3️⃣%x: hexadecimal의 약자. x는 소문자, X는 대문자로 대체됩니다. ex)
+17(10) <-> 11(16)
+
+4️⃣%u: unsigned의 약자. 양수로 대체됩니다.
+
+5️⃣%c: character의 약자. 문자로 대체됩니다.
+
+6️⃣%s: string의 약자. 문자열로 대체됩니다.
+
+7️⃣%f: floating point의 약자. single precision.
+
+8️⃣%lf: double precision floating point.
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("%d", 3245 * 2342);
+    printf("%f", 3245 * 2342);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("[%d]\n", 65536);
+    printf("[%2d]\n", 65536);
+    printf("[%5d]\n", 65536);
+    printf("[%7d]\n", 65536);
+    printf("[%-7d]\n", 65536);
+    printf("[%07d]\n", 65536);
+    printf("[%+7d]\n", 65536);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("[%f]\n", 3.141592);
+    printf("[%.2f]\n", 3.141592);
+    printf("[%.10f]\n", 3.141592);
+    printf("[%5.2f]\n", 3.141592);
+    printf("[%5.10f]\n", 3.141592);
+    printf("[%+20.10f]\n", 3.141592);
+    printf("[%-20.10f]\n", 3.141592);
+
+    return 0;
+}
