@@ -1,0 +1,94 @@
+리터럴(Literal)
+소스코드에 적힌 값 그 자체를 뜻합니다. 앞으로 저자가 “값”이라고 칭하는 것들은 “리터럴”의 의미를 지닌다고 생각하면 됩니다.
+
+// Main.c
+
+#include <stdio.h>
+
+int main(void)
+{
+    65536;           // 정수 리터럴. 
+    65536LL;         // 정수 리터럴. 
+    65536u;          // 정수 리터럴. 
+    3.141592;        // 실수 리터럴.
+    3.141592f;       // 실수 리터럴.
+    'd';             // 문자 리터럴. ''는 문자 리터럴 기호.
+    "Hello, world!"; // 문자열 리터럴. ""는 문자열 리터럴 기호.
+
+    return 0;
+}
+
+해당 예제는 경고가 뜬다.
+경고(Warning)는 에러(Error)와 다릅니다. 에러가 뜨면 빌드 실패되지만, 경고는 빌드 시켜줍니다. 다만, 경고도 되도록 모두 잡고 가는 것이 국룰입니다.
+
+
+// Main.c
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("%d + %d = %d\n", 54232, 36629, 54232 + 36629);
+    printf("%d\n", 14);
+    printf("%o\n", 016);
+    printf("%x\n", 0xe);
+    printf("%X\n", 0XE);
+    printf("%c\n", 'd');
+    printf("%s\n", "Hello, world!");
+
+    printf("%f", 3.141592f);
+
+    return 0;
+}
+
+
+자료형(Type)
+저장될 데이터의 크기와 해석 방법에 대한 정보.
+
+크기 == 표현 가능한 수
+서식 지정자
+char
+1 byte. -(2^7) ~ (2^7) - 1
+[-128 ~ 127]
+%c or %hhd
+short int
+2 byte. -(2^15) ~ (2^15) - 1
+[-32768 ~ 32767]
+%hd
+int
+[기본 정수 자료형]
+4 byte. -(2^31) ~ (2^31) - 1
+[-2147483648 ~ 2147483647]
+%d or %i
+long
+4 byte or 8 byte.
+%ld
+long long
+8 byte. -(2^63) ~ (2^63) - 1
+%lld
+float
+4 byte. 유효 자리수 6~7자리.
+[부호: 1bit, 지수: 8bit, 가수: 23bit]
+%f
+double
+[기본 실수 자료형]
+8 byte. 유효 자리수 15~16자리.
+[부호: 1bit, 지수: 11bit, 가수: 52bit]
+%lf
+long double
+8 byte 이상.
+%Lf
+#include <stdio.h>
+
+int main(void)
+{
+    65536;           // int 자료형의 리터럴. 즉, int는 "기본 정수 자료형".
+    65536LL;         // LL은 long long의 약자. 즉, long long 자료형의 리터럴 기호. l은 1과 헷갈리기 때문에 잘 안씁니다.
+    65536u;          // u는 unsigned의 약자. unsigned의 리터럴 기호.
+    3.141592;        // double 자료형의 리터럴. 즉, double은 "기본 실수 자료형".
+    3.141592f;       // float 자료형의 리터럴 기호 f.
+    'd';             // char 자료형의 리터럴. ''는 char 자료형의 리터럴 기호.
+    "Hello, world!"; // 문자열 리터럴. ""는 문자열 리터럴 기호. const char[] 자료형 리터럴 기호.
+
+    return 0;
+}
