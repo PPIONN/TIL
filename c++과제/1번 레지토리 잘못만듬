@@ -1,0 +1,92 @@
+#include <iostream>
+//#include <iomanip> // 소수점 출력 제한을 위함
+#include <string>
+//#include <cstring>
+//#include <algorithm>
+//#include <vector>
+using namespace std;
+
+
+
+void setPotion(int count, int* p_HPPotion, int* p_MPPotion) {
+	cout << "1.MP포션 사용 / 2.HP 포션 사용 / 3.공격력 2배 UP / 4.방어력 2배 UP / 5.현재 능력치 / 6.Level Up / 0.나가기 \n";
+
+};
+
+
+int main() {
+	//ios_base::sync_with_stdio(false);
+	//cin.tie(0);
+
+	int status[5] = { 0, }; // 스테이터스
+	int j[5] = { 1, }; // 깐깐한 입력검사!
+	while (1) {
+		int i = 0;
+		cout << "1.HP UP / 2.MP UP / 3.공격력 UP / 4.방어력 UP / 5.현재 능력치 / 6.Level Up / 0.나가기 \n";
+		cin >> i;
+		if (i == 0) {
+			cout << "End" << endl;
+			break;
+
+		}
+		j[i] = 1; // 입력검사를 통과하기 위한 값 지정
+
+
+
+		if ((i == 3 || i == 4) && (j[1] == 0 || j[2] == 0)) {// 입력검사!
+			cout << "HP와 MP를 먼저 입력해주셔야 합니다! \n";
+		}
+			else {
+				switch (i) {
+
+				case 1:
+					while (1) {
+						cout << "HP를 입력해 주세요.\n";
+						cin >> status[i];
+						if (status[i] > 50) {
+							break;
+						}
+						cout << "HP가 50 이하라면 안됩니다. 보다 높은 수를 입력해주세요.\n";
+					}
+					break;
+
+				case 2:
+					while (1) {
+						cout << "MP를 입력해 주세요.\n";
+						cin >> status[i];
+						if (status[i] > 50) {
+							break;
+						}
+						cout << "MP가 50 이하라면 안됩니다. 보다 높은 수를 입력해주세요.\n";
+					}
+					break;
+
+				case 3:
+					while (1) {
+						cout << "공격력을 입력해 주세요.\n";
+						cin >> status[i];
+						if (status[i] > 0) {
+							break;
+						}
+						cout << "공격력이 0 이하라면 안됩니다. 보다 높은 수를 입력해주세요.\n";
+					}
+					break;
+				case 4:
+					while (1) {
+						cout << "방어력을 입력해 주세요.\n";
+						cin >> status[i];
+						if (status[i] > 0) {
+							break;
+						}
+						cout << "방어력이 0 이하라면 안됩니다. 보다 높은 수를 입력해주세요.\n";
+					}
+					break;
+
+				case 5:
+					cout << "HP : " << status[1] << " MP : " << status[2] << " 공격력 : " << status[3] << " 방어력 : " << status[4] << "\n";
+				}
+			}
+		}
+	return 0;
+}
+
