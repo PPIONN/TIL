@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="RPGad/RPGad.vcxproj" Id="6e2ba329-4564-48b1-82ea-4b00e4044f14" />
+</Solution>
