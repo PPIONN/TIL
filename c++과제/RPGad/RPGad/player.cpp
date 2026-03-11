@@ -56,7 +56,7 @@ void Player::fail() {
     this_thread::sleep_for(chrono::seconds(3));
     cout << "... ... ..." << endl;
     this_thread::sleep_for(chrono::seconds(3));
-    cout << "\"당신은 용사가 아니다. 당신에겐 자격이없다. 전 세계의 모든 인류는 당신에게 실망할것이고 나 또한 당신의 선택에 큰 실망감을 가졌다.\"" << endl;
+    cout << "\"당신은 용사가 아니다. 당신에겐 자격이 없다. 전 세계의 모든 인류는 당신에게 실망할것이고 나 또한 당신의 선택에 큰 실망감을 가졌다.\"" << endl;
     this_thread::sleep_for(chrono::seconds(7));
     cout << "당신을 향해 세계의 모든 인류는 비난과 힐난을 보낸다." << endl;
     this_thread::sleep_for(chrono::seconds(3));

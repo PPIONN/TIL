@@ -98,12 +98,19 @@ int main() {
                     break;
                 }
             }
+            else if (fightcheck2 > 2) {
+                cout << "허튼 방식만 추구하는 외도 용사는 저희 세계에는 필요 없습니다. 세상은 장난으로 돌아가지 않습니다." << endl;
+                break;
+            }
 
 
         }
     }
-    else{
+    else if(fightcheck == 2){
         player->fail();
+    }
+    else {
+        cout << "허튼 방식만 추구하는 외도 용사는 저희 세계에는 필요 없습니다.세상은 장난으로 돌아가지 않습니다." << endl;
     }
 
     if (player != nullptr)
