@@ -22,14 +22,11 @@ void Magician::attack() {
 }
 void Magician::attack(Monster* monster) {
     cout << endl;
-    setPower(getPower() - monster->getDefence());
-    if (getPower() <= 0) {
-        setPower(1);
-    }
     attack();
     this_thread::sleep_for(chrono::seconds(3));
-    monster->setHP(monster->getHP() -realPower(getPower(), monster->getDefence()));
+    monster->setHP(monster->getHP() - realPower(getPower(), monster->getDefence()));
     cout << "\"!!!!!\"" << endl;
+    this_thread::sleep_for(chrono::seconds(3));
     cout << "상대방은 쏟아지는 에너지의 파동때문에 전신으로 흐르는 격한 통증을 느끼며 몸부림 치고있다!" << endl;
     this_thread::sleep_for(chrono::seconds(3));
 

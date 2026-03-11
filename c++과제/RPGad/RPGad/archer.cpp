@@ -17,24 +17,20 @@ Archer::Archer(string nickname) {
     setAccuracy(10);
     setSpeed(10);
 };
-void Archer::attack(){
+void Archer::attack() {
     cout << getNickname() << "은 활 시위를 당겨 적의 목을 노렸다!" << endl;
 }
 void Archer::attack(Monster* monster) {
     cout << endl;
-    setPower(getPower() - monster->getDefence());
-    if (getPower() <= 0) {
-        setPower(1);
-    }
     attack();
     this_thread::sleep_for(chrono::seconds(3));
-
     for (int i = 0; i < 3; i++) {
         monster->setHP(monster->getHP() - realPower(getPower(), monster->getDefence()) / 3);
         cout << "상대방에게 " << (realPower(getPower(), monster->getDefence()) / 3) << "의 피해를 입혔다 !" << endl;
     }
     this_thread::sleep_for(chrono::seconds(3));
     cout << "\"!!!!!\"" << endl;
+    this_thread::sleep_for(chrono::seconds(3));
     cout << "당신의 활을 맞은 상대는 몸이 관통당해 찾아온 맹렬한 고통에 못이겨 몸부림 치고있다!" << endl;
     this_thread::sleep_for(chrono::seconds(3));
 

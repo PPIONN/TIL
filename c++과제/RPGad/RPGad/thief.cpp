@@ -6,7 +6,7 @@
 #include <chrono>
 using namespace std;
 
-Thief::Thief(string nickname)  {
+Thief::Thief(string nickname) {
     setNickname(nickname);
     setJobjname("도적");
     setLevel(1);
@@ -31,6 +31,7 @@ void Thief::attack(Monster* monster) {
     }
     this_thread::sleep_for(chrono::seconds(2));
     cout << "\"!!!!!\"" << endl;
+    this_thread::sleep_for(chrono::seconds(3));
     cout << "상대방은 신경이 뒤틀리는 아찔한 통증에 동공이 크게 떨리고 식은땀을 흘리며 몸부림 치기 시작했다!" << endl;
     this_thread::sleep_for(chrono::seconds(2));
 };

@@ -6,7 +6,7 @@
 #include <chrono>
 using namespace std;
 
-Warrior::Warrior(string nickname){
+Warrior::Warrior(string nickname) {
     setNickname(nickname);
     setJobjname("전사");
     setLevel(1);
@@ -25,6 +25,8 @@ void Warrior::attack(Monster* monster) {
     attack();
     this_thread::sleep_for(chrono::seconds(2));
     monster->setHP(monster->getHP() - realPower(getPower(), monster->getDefence()));
+    this_thread::sleep_for(chrono::seconds(2));
+    cout << "\"!!!!!\"" << endl;
     this_thread::sleep_for(chrono::seconds(2));
     cout << "상대방은 절단된 자신의 몸을 보며 믿을 수 없다는듯 비명을 지르며 몸부림치기 시작했다!" << endl;
     this_thread::sleep_for(chrono::seconds(2));
