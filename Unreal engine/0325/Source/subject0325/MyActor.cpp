@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #include "MyActor.h"
 
 // Sets default values
@@ -38,7 +36,7 @@ void AMyActor::BeginPlay()
 
 		//AddOnScreenDebugMessage(① 번호, ② 시간, ③ 색상, ④[출력할 문장]FString::Printf(TEXT("Step %d: %s"), 데이터1, 데이터2 ...);)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("FinalLocation %d: %s"), i + 1, *FinalPos.ToString()));
-
+		UE_LOG(LogTemp, Warning, TEXT("log cout !!"));
 		FRotator RandomRotation = FRotator(FMath::RandRange(-200.f, 200.f), FMath::RandRange(-200.f, 200.f), 0.f);
 
 		AddActorLocalRotation(RandomRotation);
